@@ -1,0 +1,13 @@
+1) Create an Array and Get Elements
+
+2) Initialize an array and get input from the user for the elements that need to be sorted.
+
+3) Set the initial gap to half the size of the array.
+
+4) Repeat the process while the gap is greater than zero.
+
+5) For each gap, perform an insertion sort on the subarrays that are spaced by the gap.
+
+6) After each pass, reduce the gap by half.
+
+7) After each pass, print the current state of the array.

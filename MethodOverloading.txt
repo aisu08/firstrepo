@@ -1,0 +1,41 @@
+class MethodOverloading
+{
+ 
+float sub(float p , float q )
+{
+System.out.println("2 sub");
+return p-q;
+}
+
+
+/*float sub(int p , float q )
+{
+return p-q;
+}
+void sub(int t , int s ,int r)
+{
+System.out.println("sum of 3 int:"+(t-s-r));
+}
+float sub(float p , float q )
+{
+System.out.println("2 float");
+ 
+return p-q;
+}*/
+ 
+public static void main(String ar[])
+{
+ 
+MethodOverloading m = new  MethodOverloading();
+//System.out.println("2 param int"+c.add(12,45));
+System.out.println("2 param float "+m.sub(12.0f,45.3f));
+ 
+ 
+//System.out.println("2 param int and float"+c.add(12,23.3f));
+//c.add(12,45,78);
+//System.out.println("2 param float"+c.add(12.3f,45.4f));
+ 
+ 
+ 
+}
+}

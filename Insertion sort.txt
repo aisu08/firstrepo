@@ -1,0 +1,8 @@
+Insertion Sort Implementation
+To implement the Insertion Sort algorithm in a programming language, we need:
+
+1) create an array get elements to sort the array
+2) Repeat from 0 to length-1
+3) An outer loop that picks a value to be sorted. For an array with n values, this outer loop skips the first value, and must run n-1 times.
+4) An inner loop that goes through the sorted part of the array, to find where to insert the value.
+5) If the value to be sorted is at index i, the sorted part of the array starts at index 0 and ends at index i-1

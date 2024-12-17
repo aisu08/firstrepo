@@ -1,0 +1,11 @@
+1)Create an Array and Get Elements
+
+2)Initialize an array and get input from the user for the elements that need to be sorted.
+
+3)Create a function that partitions the array around a pivot element. This function rearranges the array so that elements less than the pivot are on its left, and elements greater are on its right.
+
+4)Create a recursive function that calls the partition function and sorts the subarrays.
+
+5)Call the quick sort function on the entire array.
+
+6)After sorting is complete, print the sorted array.

@@ -1,0 +1,15 @@
+Create an Array and Get Elements:
+
+Initialize an array and get input from the user for the elements that need to be sorted.
+Define the Merge Function:
+
+Create a function to merge two sorted halves of the array.
+Outer Function to Sort the Array:
+
+Implement a recursive function that divides the array into halves until single-element arrays are obtained.
+Merge the Sorted Halves:
+
+Use the merge function to combine the sorted halves back into a single sorted array.
+Print the Array:
+
+After each merge operation, print the current state of the array.

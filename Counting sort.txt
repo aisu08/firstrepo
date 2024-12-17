@@ -1,0 +1,6 @@
+1) Create an Array and Get Elements
+2) Initialize an array and get input from the user for the elements that need to be sorted.
+3) Use an outer loop that iterates from index 1 to length - 1. This loop picks the element to be sorted in each iteration.
+4) Use an inner loop to traverse through the sorted part of the array (from index 0 to i - 1) to find the correct position for the current element.
+5) In the inner loop, compare the element to be sorted with elements in the sorted part. Shift elements in the sorted part to the right to make space for the element being inserted.
+6) Once the correct position is found, insert the element.

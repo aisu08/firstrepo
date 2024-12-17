@@ -1,0 +1,15 @@
+import java.util.*;
+public class Typecast{
+public static void main(String args[]){
+Scanner sc = new Scanner(System.in);
+float f = sc.nextFloat();
+
+
+long l=f;
+System.out.println("Implicit cast: float: "+ f +"Long: " +l);
+
+f = (float)l;
+System.out.println("Explicit cast: float: "+ f +"Long: " +l);
+}
+}
+

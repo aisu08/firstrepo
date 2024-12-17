@@ -1,0 +1,184 @@
+package librarymanagement;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Hospitalmgmt {
+
+    public static void main(String[] args) {
+        List<Staff> l = new ArrayList<>();
+        // Adding Doctors
+        l.add(new Doctor("Aisvarya", 21, 1, "Neuro", "Neurology", 300));
+        l.add(new Doctor("Hari", 22, 2, "Optic", "Optomology", 400));
+        l.add(new Doctor("Anu", 21, 3, "Cardio", "Cardiology", 500));
+        l.add(new Doctor("Arjun", 21, 4, "Surgeon", "Surgeon", 300));
+        l.add(new Doctor("Vaishu", 22, 5, "ENT", "ENT", 300));
+
+        // Adding Nurses
+        l.add(new Nurse("Abi", 22, 3, "BSC", "5-8", 50));
+        l.add(new Nurse("Anju", 23, 1, "BSC", "8-9", 100));
+        l.add(new Nurse("Anuja", 24, 2, "BSC", "6-7", 75));
+
+        // Print all staff
+        for (Staff l1 : l) {
+            System.out.println(l1);
+        }
+
+        // Get the total count of all staff
+        int total = l.size();
+        System.out.println("Total count: " + total);
+
+        // Get count of Doctors and Nurses
+        long dcount = l.stream().filter(staff -> staff instanceof Doctor).count();
+        System.out.println("Total Doctors: " + dcount);
+
+        long ncount = l.stream().filter(staff -> staff instanceof Nurse).count();
+        System.out.println("Total Nurses: " + ncount);
+
+        // User Input for Search
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the searchId:");
+        int searchId = sc.nextInt(); // Get the ID to search for
+
+        System.out.println("Enter the type of staff to search (doctor/nurse):");
+        String staffType = sc.next(); // Get the type of staff (doctor or nurse)
+
+        // Searching based on ID and the staff type
+        if ("doctor".equalsIgnoreCase(staffType)) {
+            System.out.println("Enter the specialization for the doctor:");
+            String specialization = sc.next(); // Get specialization for Doctor
+            l.stream()
+                .filter(staff -> staff instanceof Doctor)
+                .filter(staff -> staff.getId() == searchId && ((Doctor) staff).getSpecialization().equalsIgnoreCase(specialization))
+                .forEach(System.out::println);
+        } else if ("nurse".equalsIgnoreCase(staffType)) {
+            System.out.println("Enter the wages for the nurse:");
+            int wages = sc.nextInt(); // Get wages for Nurse
+            l.stream()
+                .filter(staff -> staff instanceof Nurse)
+                .filter(staff -> staff.getId() == searchId && ((Nurse) staff).getWages() == wages)
+                .forEach(System.out::println);
+        } else {
+            System.out.println("Invalid staff type. Please enter either 'doctor' or 'nurse'.");
+        }
+    }
+}
+
+// Staff Class
+class Staff {
+    private String name;
+    private int age;
+    private int id;
+    private String department;
+
+    Staff(String name, int age, int id, String department) {
+        this.name = name;
+        this.age = age;
+        this.id = id;
+        this.department = department;
+    }
+
+    String getName() {
+        return name;
+    }
+
+    int getAge() {
+        return age;
+    }
+
+    int getId() {
+        return id;
+    }
+
+    String getDepartment() {
+        return department;
+    }
+
+    void setName(String name) {
+        this.name = name;
+    }
+
+    void setAge(int age) {
+        this.age = age;
+    }
+
+    void setId(int id) {
+        this.id = id;
+    }
+
+    void setDepartment(String department) {
+        this.department = department;
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + name + " Age: " + age + " ID: " + id + " Department: " + department;
+    }
+}
+
+// Doctor Class (extends Staff)
+class Doctor extends Staff {
+    private String specialization;
+    private int fee;
+
+    Doctor(String name, int age, int id, String department, String specialization, int fee) {
+        super(name, age, id, department);
+        this.specialization = specialization;
+        this.fee = fee;
+    }
+
+    String getSpecialization() {
+        return specialization;
+    }
+
+    int getFee() {
+        return fee;
+    }
+
+    void setSpecialization(String specialization) {
+        this.specialization = specialization;
+    }
+
+    void setFee(int fee) {
+        this.fee = fee;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " Specialization: " + specialization + " Consultation Fee: " + fee;
+    }
+}
+
+// Nurse Class (extends Staff)
+class Nurse extends Staff {
+    private String shift;
+    private int wages;
+
+    Nurse(String name, int age, int id, String department, String shift, int wages) {
+        super(name, age, id, department);
+        this.shift = shift;
+        this.wages = wages;
+    }
+
+    String getShift() {
+        return shift;
+    }
+
+    int getWages() {
+        return wages;
+    }
+
+    void setShift(String shift) {
+        this.shift = shift;
+    }
+
+    void setWages(int wages) {
+        this.wages = wages;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " Shift Timings: " + shift + " Wages: " + wages;
+    }
+}

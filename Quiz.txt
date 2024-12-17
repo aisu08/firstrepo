@@ -1,0 +1,37 @@
+1)
+Initially
+*********
+chs[0] = [null, null] 
+chs[1] = [null, null, null, null, null] 
+
+Next upon iteration
+*******************
+
+a=0, b=0 chs[0][0] = 97; i++ = 98
+a=0, b=1 chs[0][1] = 98; i++ = 99
+
+one outer loop iteration chs[0] = 97 98
+
+a=1, b=0 chs[1][0] = 99 i++ = 100
+a=1, b=1 chs[1][1] = 100 i++ = 101
+
+beacuse it have the length as chs.length so it is 2 
+
+outer loop iteration completes now chs[1] = 99 100 null null null
+
+For each loop
+*************
+
+First iteration -> ca = chs[0] = 97 98
+Second iteration ->ca = chs[1] = 99 100 null null null
+
+
+2) ISO_DATE_TIME => searches for time in the LocalDate which only have day, month, year
+use ISO_LOCAL_DATE => it gives output
+
+3) ISO_DATE_TIME -> want to use it mean YYYY-MM-DDTHH:mm:ss.SSS   T-> separation of time and date correct this use ISO_LOCAL_DATE 
+
+4) seconds is from 0-59 cant give 90 in it
+
+5) import package and make everything public to access it in other package
+
