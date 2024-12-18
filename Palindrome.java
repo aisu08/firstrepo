@@ -22,6 +22,7 @@ System.out.println("Enter n: ");
 Scanner sc = new Scanner(System.in);
 n = sc.nextInt();
 isPalindrome();
+System.out.println("New request from sts to git.");
 }
 }
 

@@ -1,0 +1,2 @@
+INDEX VERSION 1.134+C:\Users\aisvap\Desktop\Spring boot projects\Java_basics\.metadata\.plugins\org.eclipse.jdt.core
+4091954592.index
