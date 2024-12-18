@@ -23,6 +23,7 @@ Scanner sc = new Scanner(System.in);
 n = sc.nextInt();
 isPalindrome();
 System.out.println("New request from sts to git.");
+System.out.println("It is request from git to sts");
 }
 }
 
